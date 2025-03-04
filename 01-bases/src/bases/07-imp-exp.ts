@@ -1,4 +1,4 @@
-import heroes, { owners } from "../data/heroes";
+import heroes, { type Owner} from "../data/heroes";
 
 
 
@@ -8,7 +8,7 @@ export const getHeroById = ( id: number) => {
 
 //console.log(getHeroById(100));
 
-export const getHeroesByOwner = (owner: string) => {
+export const getHeroesByOwner = (owner: Owner) /* Esto es útil cuando se sabe que la información no se va expandir*/ => {
     return heroes.filter( hero => hero.owner === owner) ?? {};
 }
 
