@@ -12,4 +12,4 @@ const getHeroesByOwner = (owner: string) => {
     return heroes.filter( hero => hero.owner === owner) ?? {};
 }
 
-console.log(getHeroesByOwner('Marvel'))
+console.log(getHeroesByOwner('Marvel'));
