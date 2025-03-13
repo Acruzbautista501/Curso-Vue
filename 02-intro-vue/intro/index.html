@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo en Vue</title>
+</head>
+<body>
+    
+    <div id="myApp"> <!--En este div es donde Vue reside tiene el control--> 
+        <h3>{{ message }}</h3>
+        <blockquote>{{author}}</blockquote>
+        <button v-on:click="changeQuote">Cambiar mensaje</button> <!--Para dsiparar eventos dentro de un componente en Vue, declaramos
+        v-on seguido del evento, en este caso, el evento se dispara cuando se da clck al bot-->
+    </div><!--La regla general es que todo lo que se vaya a hacer en Vue, va a vivir dentro de este espacio-->
+    <!--Aun que tambien existen otros elementos como el Vue Teleport,
+    que permite teletransportar un elemento creado dentro de nuestra 
+    aplicacion de Vue-->
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
