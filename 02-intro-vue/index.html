@@ -11,6 +11,10 @@
         <h1>Batman Quotes</h1>
         <hr>
 
+        <!--<button @click="toggleAuthor">Toggle Author</button>-->
+        <button @click="showAuthor = !showAuthor">Toggle Author</button>
+        
+    
         <!-- El v-for es para iterar elementos. Es poderoso en Vue.js, 
          porque no solo nos va a permitir a nosostors iterarlos, también 
          va a permitir a desestructurarlos, añadirles índices y muchas 
@@ -25,7 +29,9 @@
              ayudandonos a no tener que poner {{quote.}}  -->
              <li v-for="({quote, author}, index) in quotes">
                 <span>{{index +1}} - {{quote}}</span>
-                <blockquote>{{author}}</blockquote> 
+                <!-- v.if y v-show son directivas que nos van a permitir poder ocultar
+                 elementos -->
+                <blockquote v-if="showAuthor">{{author}}</blockquote> 
              </li>
          </ul>
 
