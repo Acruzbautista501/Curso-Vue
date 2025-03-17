@@ -13,8 +13,10 @@ const app = createApp ( {
 
     setup() {
 
-        const showAuthor = ref(true) // Propiedad reactiva que va a manejar el valor de author
+        const showAuthor = ref(false) // Propiedad reactiva que va a manejar el valor de author
         const quotes = ref(originalQuotes) // Propiedad reactiva que manda a llamar al arreglo para mostrar su información
+        const newMessage = ref('');
+
         const totalQuotes = computed( ()=> {
             return quotes.value.length; // Función que retorna el valor esperado del arreglo
         }); // Propiedad computada para mostrar el total de frases que tiene el arreglo
@@ -24,16 +26,19 @@ const app = createApp ( {
         }
 
         const addQuote = () => {
-            quotes.value.unshift({ quote: 'Hola Mundo', author: 'Aldair Cruz'}); // .value sirve para referenciar al valor 
-            console.log(quotes)
+            quotes.value.unshift({ quote: newMessage.value, author: 'Aldair Cruz'}); // .value sirve para referenciar al valor 
+            newMessage.value = '';
         }
         
         return {
             quotes,
             showAuthor,
+            newMessage,
+
             toggleAuthor,
             addQuote,
             totalQuotes
+
         }
     }
 

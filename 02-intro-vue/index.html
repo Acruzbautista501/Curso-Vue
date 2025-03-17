@@ -11,10 +11,12 @@
         <h1>Batman Quotes {{totalQuotes}}</h1>
 
          <!--Evento para lanzar la función para añadir una nueva frase-->
+          <!--.enter es el modificador de evento de Vue.js para lanzar la función cuando se presiona Enter-->
         <input 
             type="text" 
             placeholder="Add Quote"
-            @keypress.enter="addQuote">  <!--Modificador de evento de Vue.js para lanzar la función cuando se presiona Enter-->
+            @keypress.enter="addQuote"
+            v-model="newMessage" > 
 
         <br>
         <br>
@@ -45,6 +47,9 @@
                 <blockquote v-if="showAuthor">{{author}}</blockquote> 
              </li>
          </ul>
+
+         <!--El v-model srive para crear un enlazado de dos lugares, es decir, si cambia en el lado 
+         de los inputs, que también cambien en la contraparte de JavaScripta y viceversa-->
 
     </div>
 
