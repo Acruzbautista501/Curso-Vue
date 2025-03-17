@@ -8,11 +8,22 @@
 <body>
     <div id="myApp">
 
-        <h1>Batman Quotes</h1>
+        <h1>Batman Quotes {{totalQuotes}}</h1>
+
+         <!--Evento para lanzar la función para añadir una nueva frase-->
+        <input 
+            type="text" 
+            placeholder="Add Quote"
+            @keypress.enter="addQuote">  <!--Modificador de evento de Vue.js para lanzar la función cuando se presiona Enter-->
+
+        <br>
+        <br>
+
         <hr>
 
         <!--<button @click="toggleAuthor">Toggle Author</button>-->
         <button @click="showAuthor = !showAuthor">Toggle Author</button>
+        <!--<button @click="addQuote">Add Quote</button>--> <!--Referencia de la función para lanzar el evento que se realice al monmento de dar clic-->
         
     
         <!-- El v-for es para iterar elementos. Es poderoso en Vue.js, 
